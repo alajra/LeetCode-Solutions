@@ -10,7 +10,7 @@
 class Solution {
 public:
   vector<int> findSubstring(string s, vector<string>& words) {
-  vector<int> result;
+  	vector<int> result;
 
 	if (words.size() == 0)
 		return result;
@@ -22,7 +22,7 @@ public:
 	vector<string> found(words);
 	int tempStart = 0;
 	
-	for (int i = 0; i + (numOfWords * length) <= s.length();i ++) {
+	for (int i = 0; i + (numOfWords * length) <= s.length();i++) {
 		string temp = s.substr(i, numOfWords * length);
 		for (int k = 0; (k + length) <= temp.length(); k += length) {
 			string word = temp.substr(k, length);
@@ -43,9 +43,8 @@ public:
 
 		found.clear();
 		copy(words.begin(), words.end(), back_inserter(found));
-
 	}
-	
+	  
 	return result;
     }
 };
